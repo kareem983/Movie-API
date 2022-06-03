@@ -6,53 +6,19 @@ import android.util.Log
 import com.example.movieapi.models.Category
 import com.example.movieapi.models.Movie
 import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStream
-import java.io.InputStreamReader
+import com.fasterxml.jackson.databind.ObjectMapper
+import java.io.*
 
 class API(private var context: Context) {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = ObjectMapper()
 
-    companion object {
+    companion object { // Singleton Design Patterns
         @SuppressLint("StaticFieldLeak")
         private var instance: API? = null
         fun getInstance(context: Context): API {
             if (instance == null) return API(context)
             return instance as API
         }
-    }
-
-    fun getMovies(categoryName: String) :ArrayList<Movie>{
-        val movies = ArrayList<Movie>()
-        val jsonString = readJSonFile()
-        val movieJsonNode: JsonNode = this.mapper.readTree(jsonString)
-        var categoryIndex = -1
-        var indexXounter = 0
-
-        // search for movie category
-        for (cat in movieJsonNode.findValue("categories")) {
-            if (cat.findValue("name").asText().toString() == categoryName) {
-                categoryIndex = indexXounter
-                break
-            }
-            indexXounter++
-        }
-
-        // check if the category exist or not then get all movies
-        if (categoryIndex != -1) {
-            for (movie in movieJsonNode.findValue("categories").get(categoryIndex)
-                .findValue("movies")) {
-                val categoryName = movieJsonNode.findValue("categories").get(categoryIndex)
-                    .findValue("name").asText()
-                val movieName = movie.findValue("name").asText().toString()
-                val movieDescription = movie.findValue("description").asText().toString()
-                movies.add(Movie(movieName, movieDescription, categoryName))
-            }
-        }
-
-        return movies
     }
 
     fun getMovieCategories(): ArrayList<Category> {
@@ -68,8 +34,45 @@ class API(private var context: Context) {
         return categories
     }
 
+    fun getMovies(categoryName: String): ArrayList<Movie> {
+        val movies = ArrayList<Movie>()
+        val jsonString = readJSonFile()
+        val movieJsonNode: JsonNode = this.mapper.readTree(jsonString)
+
+        // search for movie category
+        val categoryIndex = searchForCategory(movieJsonNode, categoryName)
+
+        // check if the category exist or not then get all movies
+        if (categoryIndex != -1) {
+            for (movie in movieJsonNode.findValue("categories").get(categoryIndex)
+                .findValue("movies")) {
+                val selectedCategoryName = movieJsonNode.findValue("categories").get(categoryIndex)
+                    .findValue("name").asText()
+                val movieName = movie.findValue("name").asText().toString()
+                val movieDescription = movie.findValue("description").asText().toString()
+                movies.add(Movie(movieName, movieDescription, selectedCategoryName))
+            }
+        }
+
+        return movies
+    }
+
+    private fun searchForCategory(movieJsonNode: JsonNode, categoryName: String): Int {
+        var categoryIndex = -1
+        var indexCounter = 0
+        for (cat in movieJsonNode.findValue("categories")) {
+            if (cat.findValue("name").asText().toString() == categoryName) {
+                categoryIndex = indexCounter
+                break
+            }
+            indexCounter++
+        }
+
+        return categoryIndex
+    }
+
     private fun readJSonFile(): String {
-        val jsonFile: InputStream = context.assets.open("test.json")
+        val jsonFile: InputStream = context.assets.open("movies-data.json")
         val reader = BufferedReader(InputStreamReader(jsonFile))
         var line: String?
         var movieString = ""
@@ -80,7 +83,7 @@ class API(private var context: Context) {
                 movieString += line + "\n"
 
             } catch (e: IOException) {
-                Log.d("tt", "Error in Json File")
+                Log.d("file", "Error in Json File")
             }
         }
 

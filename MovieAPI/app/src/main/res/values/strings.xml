@@ -6,6 +6,8 @@
     <string name="movies">Movies</string>
     <string name="movie_name">Movie Name</string>
     <string name="movie_description">Movie Description</string>
+    <string name="no_movies">No Movies Exist!</string>
+    <string name="no_categories">No Categories Exist!</string>
 
 
 </resources>

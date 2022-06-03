@@ -3,6 +3,7 @@ package com.example.movieapi.ui
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieapi.api.API
 import com.example.movieapi.adapters.MovieAdapter
@@ -30,10 +31,17 @@ class MoviesActivity : AppCompatActivity() {
     private fun showMovies() {
         val api = API.getInstance(this)
         movies = api.getMovies(categoryName)
-        binding.recyclerView.layoutManager = LinearLayoutManager(this);
-        movieAdapter = MovieAdapter(movies, this)
-        binding.recyclerView.adapter = movieAdapter
-
+        if(movies.size !=0) {
+            binding.recyclerView.layoutManager = LinearLayoutManager(this)
+            movieAdapter = MovieAdapter(movies, this)
+            binding.recyclerView.adapter = movieAdapter
+            binding.label.visibility = View.VISIBLE
+            binding.noMovies.visibility = View.GONE
+        }
+        else {
+            binding.label.visibility = View.GONE
+            binding.noMovies.visibility = View.VISIBLE
+        }
     }
 
 }

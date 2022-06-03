@@ -2,6 +2,7 @@ package com.example.movieapi.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieapi.api.API
@@ -27,10 +28,17 @@ class MainActivity : AppCompatActivity() {
     private fun showCategories(){
         val api = API.getInstance(this)
         categories = api.getMovieCategories()
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        categoryAdapter = CategoryAdapter(categories, this)
-        binding.recyclerView.adapter = categoryAdapter
-
+        if(categories.size !=0) {
+            binding.recyclerView.layoutManager = LinearLayoutManager(this)
+            categoryAdapter = CategoryAdapter(categories, this)
+            binding.recyclerView.adapter = categoryAdapter
+            binding.label.visibility = View.VISIBLE
+            binding.noCategories.visibility = View.GONE
+        }
+        else{
+            binding.label.visibility = View.GONE
+            binding.noCategories.visibility = View.VISIBLE
+        }
     }
 
     private fun onClickCategoryCard() {

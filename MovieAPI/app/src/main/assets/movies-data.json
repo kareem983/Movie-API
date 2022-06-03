@@ -24,10 +24,23 @@
         },
         {
           "id": 655883,
+          "name": "ESCAPE FROM NEW YORK 2",
+          "description": "Featuring an atmospherically grimy futuristic metropolis, Escape from New York 2 is a strange, entertaining jumble of thrilling action and oddball weirdness.",
+          "rate": "4.2"
+        },
+        {
+          "id": 655884,
           "name": "IRON MONKEY",
           "description": "Iron Monkey may not have the poetic lyricism of Crouching Tiger, it makes up for it in fun and energy.",
           "rate": "3.8"
+        },
+        {
+          "id": 655885,
+          "name": "IRON MONKEY 2 ",
+          "description": "Iron Monkey 2 may not have the poetic lyricism of Crouching Tiger, it makes up for it in fun and energy.",
+          "rate": "2.8"
         }
+
       ]
     },
     {
@@ -59,6 +72,47 @@
           "rate": "3.9"
         }
       ]
+    },
+    {
+      "id": 31285,
+      "name": "Fun",
+      "movies": [
+        {
+          "id": 755880,
+          "name": "Fun 1",
+          "description": "The chemical equation of writer Diablo Cody plus director Jason Reitman explodes onscreen with this non-traditional family comedy showcasing Cody’s edgy contemporary dialogue.",
+          "rate": "2.3"
+        },
+        {
+          "id": 732570,
+          "name": "Fun 2",
+          "description": "This acerbic action comedy introduced a winning combo: sparring buddies Simon Pegg and Nick Frost and master of style Edgar Wright, who dreamed up the script with Pegg.",
+          "rate": "4.1"
+        },
+        {
+          "id": 732574,
+          "name": "Fun 3",
+          "description": "You’re my boy, Blue! Say what you will about the Frat Pack films that followed it, but “Old School” still gets a passing grade.",
+          "rate": "2.4"
+        },
+        {
+          "id": 764438,
+          "name": "Fun 4",
+          "description": "Producer Judd Apatow steered breakout standup comic Amy Schumer to her smash big-screen debut ($141 million worldwide) by helping her to write a recognizably real woman to play — accessible, honest, emotional — within the genre confines of a mainstream romantic comedy.",
+          "rate": "3.9"
+        },
+        {
+          "id": 764438,
+          "name": "Fun 5",
+          "description": "Producer Judd Apatow steered breakout standup comic Amy Schumer to her smash big-screen debut ($141 million worldwide) by helping her to write a recognizably real woman to play — accessible, honest, emotional — within the genre confines of a mainstream romantic comedy.",
+          "rate": "3.9"
+        }
+      ]
+    },
+    {
+      "id": 81281,
+      "name": "Cinema",
+      "movies": []
     }
   ]
 }
