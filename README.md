@@ -1,5 +1,5 @@
 # Movie-API
-> A full API (JSON file) that has the data about Movies with it's Categories.
+> a small practical task about api parsing.
 
 [![](http://img.shields.io/badge/language-Kotlin-brightgreen.svg?color=orange)](https://kotlinlang.org)
 
