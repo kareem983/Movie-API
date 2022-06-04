@@ -8,6 +8,9 @@
     <string name="movie_description">Movie Description</string>
     <string name="no_movies">No Movies Exist!</string>
     <string name="no_categories">No Categories Exist!</string>
-
+    <string name="exception_message">There are Exception in File Format</string>
+    <string name="add_movie">Add Movie</string>
+    <string name="update_movie">Update Movie</string>
+    <string name="delete_movie">Delete Movie</string>
 
 </resources>

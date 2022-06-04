@@ -112,7 +112,49 @@
     {
       "id": 81281,
       "name": "Cinema",
+      "movies":
+      [
+        {
+          "id": 955880,
+          "name": "The Adam Project",
+          "description": "The chemical equation of writer Diablo Cody plus director Jason Reitman explodes onscreen with this non-traditional family comedy showcasing Cody’s edgy contemporary dialogue.",
+          "rate": "4.3"
+        },
+        {
+          "id": 932570,
+          "name": "Encanto",
+          "description": "This acerbic action comedy introduced a winning combo: sparring buddies Simon Pegg and Nick Frost and master of style Edgar Wright, who dreamed up the script with Pegg.",
+          "rate": "4.1"
+        },
+        {
+          "id": 932574,
+          "name": "Don't Look Up",
+          "description": "You’re my boy, Blue! Say what you will about the Frat Pack films that followed it, but “Old School” still gets a passing grade.",
+          "rate": "2.4"
+        },
+        {
+          "id": 964438,
+          "name": "The Northman",
+          "description": "Producer Judd Apatow steered breakout standup comic Amy Schumer to her smash big-screen debut ($141 million worldwide) by helping her to write a recognizably real woman to play — accessible, honest, emotional — within the genre confines of a mainstream romantic comedy.",
+          "rate": "3.9"
+        }
+      ]
+    },
+    {
+      "id": 81221,
+      "name": "Drama",
+      "movies": []
+    },
+    {
+      "id": 81285,
+      "name": "Animation",
+      "movies": []
+    },
+    {
+      "id": 81289,
+      "name": "Music",
       "movies": []
     }
+
   ]
 }

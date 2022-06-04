@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_icon_id"
+        android:icon="@drawable/ic_baseline_add_circle_24"
+        android:title="@string/add_movie" />
+
+    <item
+        android:id="@+id/update_icon_id"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/update_movie" />
+
+    <item
+        android:id="@+id/delete_icon_id"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="@string/delete_movie" />
+
+</menu>
