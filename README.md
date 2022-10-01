@@ -100,4 +100,4 @@ A Movie api is a set of Movies Categories that have (ID, Name, Rate, ...). Each 
 ## References
 - [Android Studio](https://developer.android.com/studio)
 - [Kotlin Programming Language](https://kotlinlang.org) <br>
-- [Jackson Library](https://github.com/FasterXML/jackson) <br>
+- [Jackson Library](https://github.com/FasterXML/jackson) <br> 
